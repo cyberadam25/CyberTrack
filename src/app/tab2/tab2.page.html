@@ -1,0 +1,49 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-title>Progress</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+
+  <div class="progress-page">
+
+    <h1>Study Progress</h1>
+    <p>Track your CyberTrack study activity.</p>
+
+    <div class="progress-card">
+      <h2>Overall Completion</h2>
+
+      <h1>{{ completionPercent }}%</h1>
+
+      <div class="progress-background">
+        <div
+          class="progress-fill"
+          [style.width.%]="completionPercent">
+        </div>
+      </div>
+    </div>
+
+    <div class="progress-card">
+      <h2>Total Tasks</h2>
+      <p>{{ totalTasks }}</p>
+    </div>
+
+    <div class="progress-card">
+      <h2>Completed</h2>
+      <p>{{ completedTasks }}</p>
+    </div>
+
+    <div class="progress-card">
+      <h2>In Progress</h2>
+      <p>{{ inProgressTasks }}</p>
+    </div>
+
+    <div class="progress-card">
+      <h2>Not Started</h2>
+      <p>{{ notStartedTasks }}</p>
+    </div>
+
+  </div>
+
+</ion-content>

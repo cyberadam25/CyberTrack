@@ -1,0 +1,70 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-title>
+      CyberTrack
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+
+  <div class="dashboard">
+
+    <div class="welcome-section">
+      <h1>Study Dashboard</h1>
+      <p>Stay organized and keep your studying goals on track.</p>
+    </div>
+
+    <h2>Upcoming Tasks</h2>
+
+    @for (task of tasks; track task.id) {
+    <div class="task-card">
+      <h3>{{ task.taskName }}</h3>
+
+      <p>Category: {{ task.category }}</p>
+
+      <p>Due: {{ task.dueDate }}</p>
+
+      <p>Study Time: {{task.studyTime }} minutes</p>
+
+      <span class="status">
+        {{ task.completionStatus }}
+      </span>
+
+      @if (task.completionStatus !== 'Completed') {
+      <button class="complete-button" (click)="completeTask(task.id)">
+        Mark Complete
+      </button>
+      }
+    </div>
+    } @empty {
+    <p>No study tasks found.</p>
+    }
+
+    <div class="add-task-form">
+
+      <h2>Add Study Task</h2>
+
+      <input #taskName type="text" placeholder="Task Name">
+
+      <input #category type="text" placeholder="Category">
+
+      <input #dueDate type="date">
+
+      <button class="add-task-button" (click)="addTask(taskName.value, category.value, dueDate.value)">
+        + Add Study Task
+      </button>
+
+
+    </div>
+
+    <div class="device-info">
+      <h2>Device Plugin</h2>
+      <p><strong>Model:</strong>{{ deviceModel }}</p>
+      <p><strong>Platform:</strong>{{ devicePlatform }}</p>
+      <p><strong>Version:</strong> {{ deviceVersion }}</p>
+    </div>
+
+  </div>
+
+</ion-content>

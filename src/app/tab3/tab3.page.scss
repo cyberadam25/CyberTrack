@@ -1,0 +1,23 @@
+.settings-page {
+  padding: 20px;
+}
+
+.settings-page h1 {
+  margin-bottom: 5px;
+}
+
+.settings-page > p {
+  opacity: 0.7;
+  margin-bottom: 25px;
+}
+
+.settings-card {
+  padding: 18px;
+  margin-bottom: 15px;
+  border-radius: 12px;
+  background: var(--ion-color-step-100);
+}
+
+.settings-card h2 {
+  margin-top: 0;
+}
